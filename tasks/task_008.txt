@@ -1,0 +1,55 @@
+# Task ID: 8
+# Title: Frontend: Log Entry List and CRUD Operations
+# Status: done
+# Dependencies: 7
+# Priority: medium
+# Description: Implement the log entry list view with update and delete functionality.
+# Details:
+Create a component to display all log entries in a responsive list/table. Implement sorting by date. Add edit and delete buttons for each entry. Connect the edit button to populate the form with entry data. Implement delete confirmation dialog. Connect to the API service functions for data retrieval and modifications. Add loading states and error handling for API operations.
+
+# Test Strategy:
+Test the list view with multiple entries. Verify that entries can be edited and deleted. Test sorting functionality. Ensure error states are handled appropriately.
+
+# Subtasks:
+## 1. Create basic log entry list component structure [done]
+### Dependencies: None
+### Description: Set up the foundational component structure for displaying log entries in a responsive list/table format
+### Details:
+Create a new LogEntryList component with a basic responsive layout. Define the component's state to hold log entries array. Create a skeleton table/list structure with headers for all relevant fields (date, title, content, etc.). Add placeholder styling for the list view with responsive breakpoints. Include empty state handling when no entries exist. Test the component renders correctly with mock data.
+
+## 2. Implement API service integration for fetching log entries [done]
+### Dependencies: 8.1
+### Description: Connect the log entry list component to the API service to retrieve real data
+### Details:
+Create or update the API service with a function to fetch all log entries. Implement loading state in the component with appropriate UI indicators. Add error handling for failed API requests with user-friendly error messages. Connect the API service to the component using useEffect to load data on component mount. Implement proper cleanup for any subscriptions or async operations. Test the component successfully loads and displays real data from the API.
+
+## 3. Add sorting functionality by date [done]
+### Dependencies: 8.2
+### Description: Implement the ability to sort log entries by date in ascending or descending order
+### Details:
+Add sort state to the component to track current sort direction. Create a sort toggle function that reverses the current sort order. Implement the actual sorting logic for dates (considering timezone issues). Add visual indicators showing the current sort direction. Update the UI with sort direction arrows or similar indicators. Test sorting works in both directions and handles edge cases like entries with the same date.
+
+## 4. Add edit and delete buttons to each log entry [done]
+### Dependencies: 8.2
+### Description: Enhance each log entry row with action buttons for editing and deleting entries
+### Details:
+Add an actions column to the log entry list. Create styled edit and delete buttons for each row. Implement hover states and appropriate icons for the buttons. Ensure buttons are accessible and have proper ARIA attributes. Make the buttons responsive on different screen sizes. Test the buttons render correctly and are properly aligned in the UI.
+
+## 5. Implement edit functionality with form population [done]
+### Dependencies: 8.4
+### Description: Connect edit buttons to populate the log entry form with the selected entry's data
+### Details:
+Create an onEdit handler function that captures the selected log entry. Implement a mechanism to pass the selected entry data to the form component (via context, props, or state management). Ensure the form correctly populates all fields with the entry data. Add a way to toggle between create and edit modes in the form. Update form submission logic to handle both creating new entries and updating existing ones. Test the edit flow works end-to-end, from clicking edit to seeing populated form.
+
+## 6. Implement delete confirmation dialog [done]
+### Dependencies: 8.4
+### Description: Create a confirmation dialog that appears before deleting a log entry
+### Details:
+Create a reusable confirmation dialog component with cancel and confirm buttons. Connect the delete button click handler to show this dialog. Pass the relevant entry information to the dialog for user confirmation. Style the dialog to clearly indicate the destructive action. Implement focus management for accessibility when the dialog opens. Add appropriate warning text explaining the permanent nature of deletion. Test the dialog appears correctly and can be both confirmed and canceled.
+
+## 7. Connect delete functionality to API and implement optimistic updates [done]
+### Dependencies: 8.6, 8.2
+### Description: Implement the actual deletion of entries with API integration and optimistic UI updates
+### Details:
+Add a delete function to the API service that sends a DELETE request for a specific entry ID. Connect the confirmation dialog's confirm action to call this API function. Implement optimistic updates to remove the entry from the UI immediately before API confirmation. Add error handling to revert the optimistic update if the API call fails. Show appropriate success/error notifications to the user. Implement any necessary state refreshing after successful deletion. Test the full delete flow works correctly with both successful and failed API responses.
+

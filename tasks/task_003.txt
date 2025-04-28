@@ -1,0 +1,11 @@
+# Task ID: 3
+# Title: Backend API: Create and Read Endpoints
+# Status: done
+# Dependencies: 2
+# Priority: high
+# Description: Implement the POST /logs and GET /logs API endpoints for creating and retrieving log entries.
+# Details:
+Create a routes directory with a logs.ts file. Implement the POST /logs endpoint to accept LogEntry data (excluding id), validate inputs, and insert into the database. Implement the GET /logs endpoint to retrieve all log entries sorted by date. Set up proper error handling and response status codes. Use Express Router for organizing routes. Ensure proper TypeScript interfaces for request/response objects.
+
+# Test Strategy:
+Use Postman or curl to test the endpoints. Verify that POST creates entries correctly and GET retrieves all entries. Test with valid and invalid data to ensure proper validation and error handling.

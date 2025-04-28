@@ -1,0 +1,11 @@
+# Task ID: 1
+# Title: Project Scaffolding and Environment Setup
+# Status: done
+# Dependencies: None
+# Priority: high
+# Description: Set up the initial project structure for both frontend and backend with TypeScript configuration, and establish the SQLite database.
+# Details:
+Create two separate directories for frontend and backend. For backend: Initialize Node.js project with npm init, install Express, TypeScript, ts-node, and SQLite dependencies. Configure tsconfig.json for Node.js. For frontend: Use create-react-app with TypeScript template or Vite. Set up a basic project structure with components, services, and types folders. Configure proxy in package.json to point to the backend server during development.
+
+# Test Strategy:
+Verify that both frontend and backend projects compile successfully. Ensure SQLite connection can be established with a simple test script.

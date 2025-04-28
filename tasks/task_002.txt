@@ -1,0 +1,11 @@
+# Task ID: 2
+# Title: Database Schema and Connection Setup
+# Status: done
+# Dependencies: 1
+# Priority: high
+# Description: Define the LogEntry database schema and implement database connection functionality.
+# Details:
+Create a database.ts file in the backend to handle SQLite connection. Implement the LogEntry table creation with fields: id (PRIMARY KEY), userName (TEXT), description (TEXT), eventDate (TEXT), and location (TEXT). Use SQLite's better-sqlite3 or similar library. Create utility functions for database operations (connect, close, query). Implement error handling for database operations.
+
+# Test Strategy:
+Write a script that initializes the database, creates the table, and verifies the schema is correct. Test connection, table creation, and basic query operations.

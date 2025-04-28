@@ -1,0 +1,43 @@
+# Task ID: 11
+# Title: Refactor SQL Logic from Express Routes to Database Module
+# Status: done
+# Dependencies: None
+# Priority: medium
+# Description: Move all SQL operations from Express route handlers into dedicated functions in the database.ts module to improve code organization and maintainability.
+# Details:
+This task involves identifying and extracting all SQL queries and database operations (SELECT, INSERT, UPDATE, DELETE) currently embedded in Express route handlers and moving them to appropriate utility functions in the database.ts module. Steps include:
+
+1. Analyze all route handlers to identify SQL operations
+2. Create well-named utility functions in database.ts for each operation type (e.g., getUserById, updateUserProfile, deletePost)
+3. Ensure functions accept necessary parameters and return appropriate results
+4. Implement proper error handling in database functions
+5. Update route handlers to call these utility functions instead of containing SQL logic directly
+6. Maintain the same functionality while improving separation of concerns
+7. Document each new database function with JSDoc comments explaining parameters, return values, and possible errors
+8. Ensure transaction handling is properly implemented where multiple operations need to be atomic
+
+The refactored code should maintain all existing functionality while improving maintainability and testability by centralizing database access logic.
+
+# Test Strategy:
+Testing should verify that the refactoring maintains identical functionality while improving code organization:
+
+1. Unit tests for database module:
+   - Create unit tests for each new database utility function
+   - Test with valid inputs, edge cases, and error conditions
+   - Mock the database connection to isolate tests
+
+2. Integration tests:
+   - Run existing API tests to ensure functionality remains unchanged
+   - Verify all CRUD operations work as before
+   - Test transactions to ensure atomicity is maintained
+
+3. Code review verification:
+   - Confirm no SQL queries remain in route handlers
+   - Verify route handlers only call database utility functions
+   - Check error handling is properly implemented in both layers
+
+4. Performance testing:
+   - Compare response times before and after refactoring to ensure no performance regression
+
+5. Manual testing:
+   - Test each affected endpoint through the API to verify correct behavior

@@ -1,0 +1,11 @@
+# Task ID: 4
+# Title: Backend API: Update and Delete Endpoints
+# Status: done
+# Dependencies: 3
+# Priority: high
+# Description: Implement the PUT /logs/:id and DELETE /logs/:id API endpoints for updating and deleting log entries.
+# Details:
+Extend the logs.ts routes file to include PUT /logs/:id endpoint that updates an existing entry. Implement the DELETE /logs/:id endpoint to remove entries. Add validation to ensure the entry exists before updating/deleting. Return appropriate status codes and error messages. Implement parameter validation to prevent SQL injection.
+
+# Test Strategy:
+Test updating entries with valid and invalid data. Verify that entries can be deleted and that appropriate error responses are returned when attempting to modify non-existent entries.

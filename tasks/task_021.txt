@@ -1,0 +1,43 @@
+# Task ID: 21
+# Title: Implement Centralized Validation and Error Handling Middleware
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Extract common validation and error handling logic from backend API routes into reusable middleware and utility functions to reduce code duplication and ensure consistent error responses.
+# Details:
+Create a middleware architecture that centralizes input validation and error handling across all API routes. This should include:
+
+1. Create a validation middleware factory that can be configured for different routes with specific validation schemas (using libraries like Joi, Yup, or express-validator)
+2. Implement a global error handling middleware that catches errors from all routes and formats them consistently
+3. Develop utility functions for common validation patterns (e.g., ID validation, pagination parameters, date formats)
+4. Create a standardized error response format with appropriate HTTP status codes, error codes, and messages
+5. Add support for different types of validation (query params, request body, headers, etc.)
+6. Implement custom error classes for different error scenarios (ValidationError, AuthenticationError, NotFoundError, etc.)
+7. Add logging integration to capture error details for troubleshooting
+8. Ensure the middleware preserves the original error stack traces for debugging
+9. Document the new middleware and utilities with JSDoc or similar
+10. Refactor at least three existing API routes to use the new middleware
+
+# Test Strategy:
+Testing should verify both the functionality and integration of the new middleware:
+
+1. Unit tests:
+   - Test each validation utility function with valid and invalid inputs
+   - Test error handling middleware with different error types
+   - Verify correct status codes and response formats for different error scenarios
+
+2. Integration tests:
+   - Create test routes that trigger different validation scenarios
+   - Verify that validation errors are properly caught and formatted
+   - Test that custom error classes are properly handled
+   - Ensure stack traces are preserved in development mode but hidden in production
+
+3. Refactoring verification:
+   - Compare response formats before and after refactoring to ensure consistency
+   - Measure code reduction in routes after implementing the middleware
+   - Verify that all validation rules from original routes are preserved
+   - Test edge cases that were previously handled in individual routes
+
+4. Performance testing:
+   - Benchmark API response times before and after middleware implementation
+   - Ensure the middleware doesn't introduce significant overhead

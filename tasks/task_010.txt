@@ -1,0 +1,11 @@
+# Task ID: 10
+# Title: Unit Testing and Documentation
+# Status: done
+# Dependencies: 9
+# Priority: low
+# Description: Write unit tests for core functionality and create documentation for running the application.
+# Details:
+Set up Jest for backend testing. Write at least one unit test for each CRUD operation. Create a README.md with instructions for: installing dependencies, setting up the development environment, running the application locally, executing tests, and basic usage instructions. Include information about the tech stack and project structure. Document any known limitations or future enhancements.
+
+# Test Strategy:
+Run the unit tests to ensure they pass. Have someone follow the documentation to set up and run the application to verify the instructions are clear and complete.

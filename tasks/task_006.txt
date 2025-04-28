@@ -1,0 +1,11 @@
+# Task ID: 6
+# Title: Frontend: API Service Integration
+# Status: done
+# Dependencies: 4, 5
+# Priority: medium
+# Description: Create service functions to interact with the backend API endpoints.
+# Details:
+Create an api.ts service file with functions for createLogEntry, getLogEntries, updateLogEntry, and deleteLogEntry. Use fetch or axios for API calls. Implement proper error handling and loading states. Create TypeScript interfaces matching the backend data models. Add functionality to transform dates between frontend and backend formats if needed.
+
+# Test Strategy:
+Create mock API responses and test the service functions. Verify that API calls are formatted correctly and that responses are properly handled, including error cases.
